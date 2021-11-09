@@ -1,2 +1,2 @@
 var user = localStorage.getItem("user")
-console.log("%cWelcome " + user, "color: darkblue"
+console.log("%cWelcome " + user, "color: darkblue")
