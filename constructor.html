@@ -4,12 +4,12 @@
   <head>
     <script id="global" src="https://adamraichu.github.io/code/global.js"></script>
     <script id="constructor">
-      var Object = function () {
-        this.date = "11/8/2021"
-        this.author = "AdamRaichu"
+      var Template = function () {
+        this.date = "11/8/2021" //The date the object was last edited.
+        this.author = "AdamRaichu" //Author of the object
         this.purpose = {
           general: "An object used in testing a constructor.",
-          specific: "The first test of the test."
+          specific: "The specific purpose of the object."
         }
       }
       
@@ -20,7 +20,7 @@
         console.log("Specifically: " + this.purpose.specific)
       }
       
-      var testObject = new Object
+      var template = new Template
     </script>
   </head>
   <body>
