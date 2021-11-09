@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <!-- Although this is an html file, it's main function is in javascript. -->
+  <head>
+    <script id="global" src="https://adamraichu.github.io/code/global.js"></script>
+    <script id="constructor">
+      var Object = function () {
+        this.date = "11/8/2021"
+        this.user = user
+        this.purpose = {
+          general: "An object used in testing a constructor.",
+          specific: "The first test of the test."
+        }
+      }
+      
+      Object.prototype.data = function() {
+        console.log(this.date)
+        console.log("General purpose: " + this.purpose.general)
+        console.log("Specifically: " + this.purpose.specific)
+      }
+      
+      var testObject = new Object
+    </script>
+  </head>
+  <body>
+    <button onclick="testObject.data()">Click to run testObject.data()</button>
+  </body>
+</html>
