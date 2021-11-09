@@ -6,7 +6,7 @@
     <script id="constructor">
       var Object = function () {
         this.date = "11/8/2021"
-        this.user = user
+        this.author = "AdamRaichu"
         this.purpose = {
           general: "An object used in testing a constructor.",
           specific: "The first test of the test."
@@ -15,6 +15,7 @@
       
       Object.prototype.data = function() {
         console.log(this.date)
+        console.log("By " + this.author)
         console.log("General purpose: " + this.purpose.general)
         console.log("Specifically: " + this.purpose.specific)
       }
