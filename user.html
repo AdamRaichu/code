@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <!-- Although this is an html file, it's main function is in the javascript. -->
+  <head>
+    <script id="global" src="https://adamraichu.github.io/code/global.js"></script>
+    <script id="user">
+      function setUser() {
+        var user = prompt("user")
+        localStorage.setItem("user", user)
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="setUser()">Click to run setUser()</button>
+  </body>
+</html>
