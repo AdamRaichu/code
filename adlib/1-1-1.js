@@ -4,7 +4,7 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.1"
+  this.version = "1.1.1"
   this.lastUpdated = "11/23/21"
   
   this.local = {
@@ -59,3 +59,4 @@ AdamRaichuJsLib.prototype.help = function(helpWithWhat) {
 
 var AR = new AdamRaichuJsLib();
 console.log("%cAdamRaichu adlib.js is running. View at github.com/AdamRaichu/code/adlib.js", "color: #0624b8")
+AR.testCurrent()
