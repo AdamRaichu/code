@@ -21,7 +21,7 @@ var AdamRaichuJsLib = function() {
 
 AdamRaichuJsLib.prototype.testCurrent = function() {
   var versionEdited = this.version[0] + this.version[1] + this.version[2]
-  if (versionEdited > AdLibCurrentVersion) {
+  if (versionEdited < AdLibCurrentVersion) {
     console.warn("%cA newer version of AdLib.js by AdamRaichu is available @ GitHub/AdamRaichu/code/adlib.", "background-color: #ae6931, color: #0624b8")
   }
 }
