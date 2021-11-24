@@ -5,7 +5,7 @@ var AdamRaichuJsLib = function() {
     "AdamRaichu"
     ]
   this.version = "1.1.1"
-  this.lastUpdated = "11/23/21"
+  this.lastUpdated = "11/24/21"
   
   this.local = {
     array: {
