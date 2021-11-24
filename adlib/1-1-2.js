@@ -4,7 +4,7 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.1.1"
+  this.version = "1.1.2"
   this.lastUpdated = "11/24/21"
   
   this.local = {
