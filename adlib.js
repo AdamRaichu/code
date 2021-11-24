@@ -1,10 +1,10 @@
 // github.com/AdamRaichu/code
 
 var AdamRaichuJsLib = function() {
-  this.contributors = [
+  this.authors = [
     "AdamRaichu"
     ]
-  this.version = "0.2 BETA"
+  this.version = "0.2.1 BETA"
   this.lastUpdated = "11/23/21"
   
   this.local = {
@@ -20,7 +20,7 @@ var AdamRaichuJsLib = function() {
 
 AdamRaichuJsLib.prototype.about = function() {
   console.log("Listing information about this library...")
-  console.log("Contributors: " + this.contributors.join(", "))
+  console.log("Authors: " + this.authors.join(", "))
   console.log("Version: " + this.version)
   console.log("Last Updated: " + this.lastUpdated)
   console.log("Available Functions: about(); help(); local.array.store(); local.array.get()")
