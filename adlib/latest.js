@@ -1,10 +1,11 @@
 // github.com/AdamRaichu/code
+// To be included with version.js on GitHub @ AdamRaichu/code/adlib/version.js
 
 var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.1.1"
+  this.version = "1.2.0"
   this.lastUpdated = "11/24/21"
   
   this.local = {
@@ -19,11 +20,14 @@ var AdamRaichuJsLib = function() {
   }
 }
 
-AdamRaichuJsLib.prototype.testCurrent = function() {
-  var versionEdited = this.version[0] + this.version[1] + this.version[2]
-  if (versionEdited > AdLibCurrentVersion) {
-    console.warn("%cA newer version of AdLib.js by AdamRaichu is available @ GitHub/AdamRaichu/code/adlib.", "background-color: #ae6931, color: #0624b8")
+AdamRaichuJsLib.prototype.onLoad = function() {
+  
+  //Check if a newer version is available.
+  this.versionEdited = this.version[0] + this.version[1] + this.version[2]
+  if (this.versionEdited < AdLibCurrentVersion) {
+    console.warn("%cA newer version of AdLib.js by AdamRaichu is available on GitHub @ AdamRaichu/code/adlib. Run AR.edit() to see current version.", "color: #0624b8")
   }
+  
 }
 
 AdamRaichuJsLib.prototype.edit = function() {
@@ -50,6 +54,8 @@ AdamRaichuJsLib.prototype.help = function(helpWithWhat) {
     console.log("AR.local.array.get requires 1 argument. key: what key in localStorage you stored an array under using AR.local.array.store.")
   } else if (helpWithWhat === "edit") {
     console.log("This function redirects you to the latest version of this file on GitHub.")
+  } else if (helpWithWhat === "onLoad") {
+    console.log("This function is performed on the AR object when it is created. It logs version and checks for updates.")
   } else {
       //if no matches were found
     console.error('The syntax you used wasn\'t recognized by AR.help(). Run AR.help("help") for more information.')
@@ -59,4 +65,4 @@ AdamRaichuJsLib.prototype.help = function(helpWithWhat) {
 
 var AR = new AdamRaichuJsLib();
 console.log("%cAdamRaichu adlib.js is running. View at github.com/AdamRaichu/code/adlib.js", "color: #0624b8")
-AR.testCurrent()
+AR.onLoad()
