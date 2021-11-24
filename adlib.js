@@ -4,18 +4,19 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "0.2.1 BETA"
+  this.version = "1.0"
   this.lastUpdated = "11/23/21"
   
   this.local = {
-    array = {
+    array: {
       store: function(key, array) {
         localStorage.setItem(key, JSON.stringify(array))
       },
       get: function(key) {
         return JSON.parse(localStorage.getItem(key))
       }
-      
+    }
+  }
 }
 
 AdamRaichuJsLib.prototype.about = function() {
