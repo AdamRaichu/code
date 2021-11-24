@@ -5,7 +5,7 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.2.0"
+  this.version = "1.3.0"
   this.lastUpdated = "11/24/21"
   
   this.local = {
@@ -30,6 +30,10 @@ AdamRaichuJsLib.prototype.onLoad = function() {
   
 }
 
+AdamRaichuJsLib.prototype.id = function (elementId) {
+  return document.getElementById(elementId)
+}
+
 AdamRaichuJsLib.prototype.edit = function() {
   console.log("Redirecting to https://github.com/AdamRaichu/code/blob/main/adlib/latest.js...")
   window.open("https://github.com/AdamRaichu/code/blob/main/adlib/latest.js")
@@ -40,7 +44,7 @@ AdamRaichuJsLib.prototype.about = function() {
   console.log("Authors: " + this.authors.join(", "))
   console.log("Version: " + this.version)
   console.log("Last Updated: " + this.lastUpdated)
-  console.log("Available Functions: about(); help(); local.array.store(); local.array.get(); edit()")
+  console.log("Available Functions: about(); help(); local.array.store(); local.array.get(); edit(); id()")
 }
 
 AdamRaichuJsLib.prototype.help = function(helpWithWhat) {
@@ -56,6 +60,8 @@ AdamRaichuJsLib.prototype.help = function(helpWithWhat) {
     console.log("This function redirects you to the latest version of this file on GitHub.")
   } else if (helpWithWhat === "onLoad") {
     console.log("This function is performed on the AR object when it is created. It logs version and checks for updates.")
+  } else if (helpWithWhat === "id") {
+    console.log("This function is a shortened version of document.getElementById(). It does the same thing, with no added functionality.")
   } else {
       //if no matches were found
     console.error('The syntax you used wasn\'t recognized by AR.help(). Run AR.help("help") for more information.')
