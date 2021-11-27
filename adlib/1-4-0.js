@@ -59,7 +59,7 @@ AdamRaichuJsLib.prototype.about = function() {
   console.log("Authors: " + this.authors.join(", "))
   console.log("Version: " + this.version)
   console.log("Last Updated: " + this.lastUpdated)
-  console.log("Available Functions: " + this.availableFunction.join("; "))
+  console.log("Available Functions: " + this.availableFunctions.join("; "))
 }
 
 AdamRaichuJsLib.prototype.help = function(helpWithWhat) {
