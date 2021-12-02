@@ -87,5 +87,5 @@ AdamRaichuJsLib.prototype.help = function(helpWithWhat) {
 
 
 var AR = new AdamRaichuJsLib();
-console.log("%cAdamRaichu adlib.js is running. View at github.com/AdamRaichu/code/adlib.js", "color: #0624b8")
+console.log("%cAdamRaichu adlib.js is running. View at github.com/AdamRaichu/code/adlib.js", "color: #0624b8; background-color: #d8ae0d;")
 AR.onLoad()
