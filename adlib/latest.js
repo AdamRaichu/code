@@ -5,8 +5,8 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.4.2"
-  this.lastUpdated = "12/02/21"
+  this.version = "1.4.3"
+  this.lastUpdated = "12/15/21"
   this.availableFunctions = [
   //about(); help(); local.array.store(); local.array.get(); edit(); id()
     "about()",
@@ -35,10 +35,15 @@ AdamRaichuJsLib.prototype.onLoad = function() {
   
   //Check if a newer version is available.
   this.versionEdited = this.version[0] + this.version[1] + this.version[2]
-  if (this.versionEdited < AdLibCurrentVersion) {
-    console.warn("%cA newer version of AdLib.js by AdamRaichu is available on GitHub @ AdamRaichu/code/adlib. Run AR.edit() to see current version.", "color: #0624b8")
+  try {
+    if (this.versionEdited < AdLibCurrentVersion) {
+      console.warn("%cA newer version of AdLib.js by AdamRaichu is available on GitHub @ AdamRaichu/code/adlib. Run AR.edit() to see current version.", "color: #0624b8")
+    }
+  } catch (ERR) {
+    if (ERR) {
+      console.warn("%cAdLib.js has a self-checking function using version.js (under the same folder). If you already include version.js, make sure it loads BEFORE this file does. (i.e. version.js is before adlib.js in the <head> element.)", "color: #0624b8")
+    }
   }
-  
 }
 
 AdamRaichuJsLib.prototype.class = function (classNames) {
