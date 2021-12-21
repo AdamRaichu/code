@@ -5,7 +5,7 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.4.3 BETA"
+  this.version = "1.4.4 BETA"
   this.lastUpdated = "12/21/21"
   this.availableFunctions = [
   //about(); help(); local.array.store(); local.array.get(); edit(); id()
