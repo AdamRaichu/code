@@ -5,29 +5,18 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.4.3"
-  this.lastUpdated = "12/15/21"
+  this.version = "1.4.4 BETA"
+  this.lastUpdated = "12/21/21"
   this.availableFunctions = [
   //about(); help(); local.array.store(); local.array.get(); edit(); id()
     "about()",
     "help()",
-    "local.array.store()",
-    "local.array.get()",
     "edit()",
     "id()",
-    "class()"
+    "class()",
+    "localStorage.setArray()",
+    "localStorage.getArray()"
   ]
-  
-  this.local = {
-    array: {
-      store: function(key, array) {
-        localStorage.setItem(key, JSON.stringify(array))
-      },
-      get: function(key) {
-        return JSON.parse(localStorage.getItem(key))
-      }
-    }
-  } //end this.local
   
 }
 
@@ -44,6 +33,14 @@ AdamRaichuJsLib.prototype.onLoad = function() {
       console.warn("%cAdLib.js has a self-checking function using version.js (under the same folder). If you already include version.js, make sure it loads BEFORE this file does. (i.e. version.js is before adlib.js in the <head> element.)", "color: #0624b8")
     }
   }
+}
+
+localStorage.__proto__.setArray = function (key, array) {
+  localStorage.setItem(key, JSON.stringify(array))
+}
+
+localStorage.__proto__.getArray = function (key) {
+  return JSON.parse(localStorage.getItem(key))
 }
 
 AdamRaichuJsLib.prototype.class = function (classNames) {
@@ -72,10 +69,10 @@ AdamRaichuJsLib.prototype.help = function(helpWithWhat) {
     console.log('Use the function AR.help() to get information about commands. AR.help("about") will give information on using the AR.about() function in the console. Run AR.about() to get avaiable functions.')
   } else if (helpWithWhat === "about") {
     console.log("This function logs information about the library in the console. No arguments.")
-  } else if (helpWithWhat === "local.array.store" || helpWithWhat === "local.array.get") {
+  } else if (helpWithWhat === "localStorage.setArray" || helpWithWhat === "localStorage.getArray") {
     console.log("Use these functions to store arrays in localStorage.")
-    console.log("AR.local.array.store requires 2 arguments. key: what key in localStorage you want to store the array under. array: which array you want to store under key.")
-    console.log("AR.local.array.get requires 1 argument. key: what key in localStorage you stored an array under using AR.local.array.store.")
+    console.log("localStorage.setArray requires 2 arguments. key: what key in localStorage you want to store the array under. array: which array you want to store under the key.")
+    console.log("localStorage.getArray requires 1 argument. key: what key in localStorage you stored an array under using localStorage.setArray.")
   } else if (helpWithWhat === "edit") {
     console.log("This function redirects you to the latest version of this file on GitHub.")
   } else if (helpWithWhat === "onLoad") {
