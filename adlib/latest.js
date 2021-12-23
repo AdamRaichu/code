@@ -5,8 +5,8 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.4.4"
-  this.lastUpdated = "12/21/21"
+  this.version = "1.5.0"
+  this.lastUpdated = "12/23/21"
   this.availableFunctions = [
   //about(); help(); local.array.store(); local.array.get(); edit(); id()
     "about()",
@@ -14,8 +14,8 @@ var AdamRaichuJsLib = function() {
     "edit()",
     "id()",
     "class()",
-    "localStorage.setArray()",
-    "localStorage.getArray()"
+    "localStorage.setVar()",
+    "localStorage.getVar()"
   ]
   
 }
@@ -35,11 +35,11 @@ AdamRaichuJsLib.prototype.onLoad = function() {
   }
 }
 
-localStorage.__proto__.setArray = function (key, array) {
-  localStorage.setItem(key, JSON.stringify(array))
+localStorage.__proto__.setVar = function (key, variable) {
+  localStorage.setItem(key, JSON.stringify(variable))
 }
 
-localStorage.__proto__.getArray = function (key) {
+localStorage.__proto__.getVar = function (key) {
   return JSON.parse(localStorage.getItem(key))
 }
 
@@ -65,26 +65,7 @@ AdamRaichuJsLib.prototype.about = function() {
 }
 
 AdamRaichuJsLib.prototype.help = function(helpWithWhat) {
-  if (helpWithWhat === undefined || helpWithWhat === "help") {
-    console.log('Use the function AR.help() to get information about commands. AR.help("about") will give information on using the AR.about() function in the console. Run AR.about() to get avaiable functions.')
-  } else if (helpWithWhat === "about") {
-    console.log("This function logs information about the library in the console. No arguments.")
-  } else if (helpWithWhat === "localStorage.setArray" || helpWithWhat === "localStorage.getArray") {
-    console.log("Use these functions to store arrays in localStorage.")
-    console.log("localStorage.setArray requires 2 arguments. key: what key in localStorage you want to store the array under. array: which array you want to store under the key.")
-    console.log("localStorage.getArray requires 1 argument. key: what key in localStorage you stored an array under using localStorage.setArray.")
-  } else if (helpWithWhat === "edit") {
-    console.log("This function redirects you to the latest version of this file on GitHub.")
-  } else if (helpWithWhat === "onLoad") {
-    console.log("This function is performed on the AR object when it is created. It logs version and checks for updates.")
-  } else if (helpWithWhat === "id") {
-    console.log("This function is a shortened version of document.getElementById(). It does the same thing, with no added functionality.")
-  } else if (helpWithWhat === "class") {
-    console.log("This function is a shortened version of document.getElementsByClassName(). It does the same thing, with no added functionality.")
-  } else {
-      //if no matches were found
-    console.error('The syntax you used wasn\'t recognized by AR.help(). Run AR.help("help") for more information.')
-  }
+  window.open("https://github.com/AdamRaichu/code/wiki/AdLib.js")
 }
 
 
