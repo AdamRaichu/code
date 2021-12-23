@@ -64,7 +64,7 @@ AdamRaichuJsLib.prototype.about = function() {
   console.log("Available Functions: " + this.availableFunctions.join("; "))
 }
 
-AdamRaichuJsLib.prototype.help = function(helpWithWhat) {
+AdamRaichuJsLib.prototype.help = function() {
   window.open("https://github.com/AdamRaichu/code/wiki/AdLib.js")
 }
 
