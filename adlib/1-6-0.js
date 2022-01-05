@@ -24,7 +24,7 @@ var AdamRaichuJsLib = function() {
 
 AdamRaichuJsLib.prototype.onLoad = function() {
   
-  console.log("%cAdamRaichu adlib.js is running. View at github.com/AdamRaichu/code/adlib.js", "color: #0624b8; background-color: #d8ae0d;")
+  console.log("%cAdamRaichu adlib.js is running. View at github.com/AdamRaichu/code", "color: #0624b8; background-color: #d8ae0d;")
   
   //Check if a newer version is available.
   this.versionEdited = this.version[0] + this.version[1] + this.version[2]
