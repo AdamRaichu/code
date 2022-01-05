@@ -5,7 +5,7 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.5.0"
+  this.version = "1.6.0 BETA"
   this.lastUpdated = "12/23/21"
   this.availableFunctions = [
   //about(); help(); local.array.store(); local.array.get(); edit(); id()
@@ -18,9 +18,13 @@ var AdamRaichuJsLib = function() {
     "localStorage.getVar()"
   ]
   
+  this.onLoad()
+  
 }
 
 AdamRaichuJsLib.prototype.onLoad = function() {
+  
+  console.log("%cAdamRaichu adlib.js is running. View at github.com/AdamRaichu/code/adlib.js", "color: #0624b8; background-color: #d8ae0d;")
   
   //Check if a newer version is available.
   this.versionEdited = this.version[0] + this.version[1] + this.version[2]
@@ -69,6 +73,12 @@ AdamRaichuJsLib.prototype.help = function() {
 }
 
 
-var AR = new AdamRaichuJsLib();
-console.log("%cAdamRaichu adlib.js is running. View at github.com/AdamRaichu/code/adlib.js", "color: #0624b8; background-color: #d8ae0d;")
-AR.onLoad()
+if (!AR) {
+  var AR = new AdamRaichuJsLib();
+} else if (!AdLib) {
+  var AdLib = new AdamRaichuJsLib();
+} else if (!AdamRaichu) {
+  var AdamRaichu = new AdamRaichuJsLib();
+} else {
+  console.error("The default prefixes for AdLib.js are already taken. If this is unintentional (or if this script is embedded via src attribute) you should free up one of those variables. However, if you know this (and you could edit the script), remove these automatic-creation lines from your code.")
+}
