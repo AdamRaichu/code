@@ -5,8 +5,8 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.7.0 BETA"
-  this.lastUpdated = "1/16/22"
+  this.version = "1.7.1 BETA"
+  this.lastUpdated = "1/17/22"
   this.availableFunctions = [
   //about(); help(); local.array.store(); local.array.get(); edit(); id()
     "about()",
@@ -15,7 +15,8 @@ var AdamRaichuJsLib = function() {
     "id()",
     "class()",
     "localStorage.setVar()",
-    "localStorage.getVar()"
+    "localStorage.getVar()",
+    "randBetween()"
   ]
   
   this.onLoad()
@@ -39,7 +40,7 @@ AdamRaichuJsLib.prototype.onLoad = function() {
   }
 }
 
-AdamRaichuJsLib.prototype.randBetween(low, high) {
+AdamRaichuJsLib.prototype.randBetween = function (low, high) {
   if (low < high) {
     return (Math.floor(Math.random() * high) + low)
   } else {
