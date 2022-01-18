@@ -5,17 +5,17 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.6.0"
-  this.lastUpdated = "1/4/22"
+  this.version = "1.7.2"
+  this.lastUpdated = "1/18/22"
   this.availableFunctions = [
-  //about(); help(); local.array.store(); local.array.get(); edit(); id()
     "about()",
     "help()",
     "edit()",
     "id()",
     "class()",
     "localStorage.setVar()",
-    "localStorage.getVar()"
+    "localStorage.getVar()",
+    "randBetween()"
   ]
   
   this.onLoad()
@@ -36,6 +36,17 @@ AdamRaichuJsLib.prototype.onLoad = function() {
     if (ERR) {
       console.warn("%cAdLib.js has a self-checking function using version.js (under the same folder). If you already include version.js, make sure it loads BEFORE this file does. (i.e. version.js is before adlib.js in the <head> element.)", "color: #0624b8")
     }
+  }
+}
+
+AdamRaichuJsLib.prototype.randBetween = function (low, high) {
+  if (low < high) {
+    low = Math.ceil(low);
+    high = Math.floor(high)
+    return Math.floor(Math.random() * (high - low + 1)) + low;
+  } else {
+    console.error("Error: low must be less than high in randBetween.")
+    return 0
   }
 }
 
