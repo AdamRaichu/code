@@ -5,10 +5,9 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.7.1 BETA"
+  this.version = "1.7.2 BETA"
   this.lastUpdated = "1/17/22"
   this.availableFunctions = [
-  //about(); help(); local.array.store(); local.array.get(); edit(); id()
     "about()",
     "help()",
     "edit()",
@@ -42,9 +41,12 @@ AdamRaichuJsLib.prototype.onLoad = function() {
 
 AdamRaichuJsLib.prototype.randBetween = function (low, high) {
   if (low < high) {
-    return (Math.floor(Math.random() * high) + low)
+    low = Math.ceil(low);
+    high = Math.floor(high)
+    return Math.floor(Math.random() * (high - low + 1)) + low;
   } else {
     console.error("Error: low must be less than high in randBetween.")
+    return 0
   }
 }
 
