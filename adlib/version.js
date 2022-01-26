@@ -1,1 +1,1 @@
-var AdLibCurrentVersion = 1.7
+var AdLibCurrentVersion = 1.8
