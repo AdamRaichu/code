@@ -5,8 +5,8 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.7.2"
-  this.lastUpdated = "1/18/22"
+  this.version = "1.8.0"
+  this.lastUpdated = "1/26/22"
   this.availableFunctions = [
     "about()",
     "help()",
@@ -15,7 +15,9 @@ var AdamRaichuJsLib = function() {
     "class()",
     "localStorage.setVar()",
     "localStorage.getVar()",
-    "randBetween()"
+    "randBetween()",
+    "sessionStorage.setVar()",
+    "sessionStorage.getVar()"
   ]
   
   this.onLoad()
@@ -48,6 +50,14 @@ AdamRaichuJsLib.prototype.randBetween = function (low, high) {
     console.error("Error: low must be less than high in randBetween.")
     return 0
   }
+}
+
+sessionStorage.__proto__.setVar = function (key, variable) {
+  sessionStorage.setItem(key, JSON.stringify(variable))
+}
+
+sessionStorage.__proto__.getVar = function (key) {
+  return JSON.parse(sessionStorage.getItem(key))
 }
 
 localStorage.__proto__.setVar = function (key, variable) {
