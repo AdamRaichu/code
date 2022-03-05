@@ -71,6 +71,9 @@ function playSnake() {
     start.innerHTML = "Play Again";
     localStorage.setItem("moves", JSON.stringify(moves))
     localStorage.setItem("apples", JSON.stringify(apples))
+    document.getElementById("hcb_form_name").value = "Moderator"
+    document.getElementById("hcb_form_content").value = "A test"
+    document.getElementById("hcb_submit").click()
   };
 
   // Draw a circle (using the function from Chapter 14)
