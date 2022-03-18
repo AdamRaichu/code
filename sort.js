@@ -25,15 +25,14 @@ function sortTable(z) {
         } else {
           breakLoop = false
         }
-      }
-      if (breakLoop) {
-        break
-      }
-      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+      } else if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
         //if so, mark as a switch and break the loop:
         shouldSwitch = true;
         break;
       }
+    }
+    if (breakLoop) {
+      break
     }
     if (shouldSwitch) {
       /*If a switch has been marked, make the switch
