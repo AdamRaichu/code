@@ -1,5 +1,5 @@
 function sortTable(z) {
-  var table, rows, switching, i, x, y, shouldSwitch;
+  var table, rows, switching, i, x, y, shouldSwitch, breakLoop;
   table = document.getElementById("table");
   switching = true;
   /*Make a loop that will continue until
