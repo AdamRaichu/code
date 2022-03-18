@@ -18,6 +18,12 @@ function sortTable(z) {
       x = rows[i].getElementsByTagName("TD")[z];
       y = rows[i + 1].getElementsByTagName("TD")[z];
       //check if the two rows should switch place:
+      if (z === 0) {
+        if (x.dataset.lname.toLowerCase() > y.dataset.lname.toLowerCase()) {
+          shouldSwitch = true
+          break
+        }
+      }
       if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
         //if so, mark as a switch and break the loop:
         shouldSwitch = true;
