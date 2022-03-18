@@ -21,8 +21,13 @@ function sortTable(z) {
       if (z === 0) {
         if (x.dataset.lname.toLowerCase() > y.dataset.lname.toLowerCase()) {
           shouldSwitch = true
-          break
+          breakLoop = true
+        } else {
+          breakLoop = false
         }
+      }
+      if (breakLoop) {
+        break
       }
       if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
         //if so, mark as a switch and break the loop:
