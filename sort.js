@@ -1,5 +1,5 @@
 function sortTable(z) {
-  var table, rows, switching, i, x, y, shouldSwitch, breakLoop;
+  var table, rows, switching, i, x, y, shouldSwitch;
   table = document.getElementById("table");
   switching = true;
   /*Make a loop that will continue until
@@ -21,9 +21,10 @@ function sortTable(z) {
       if (z === 0) {
         if (x.dataset.lname.toLowerCase() > y.dataset.lname.toLowerCase()) {
           shouldSwitch = true
-          breakLoop = true
-        } else {
-          breakLoop = false
+        } else if (x.dataset.lname.toLowerCase() === y.dataset.lname.toLowerCase()) {
+          if (x.dataset.fname.toLowerCase() > y.dataset.fname.toLowerCase()) {
+            shouldSwitch = true
+          }
         }
       } else if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
         //if so, mark as a switch and break the loop:
