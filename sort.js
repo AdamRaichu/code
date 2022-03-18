@@ -1,5 +1,5 @@
 function sortTable(z) {
-  var table, rows, switching, i, x, y, shouldSwitch;
+  var table, rows, switching, i, x, y, shouldSwitch, shouldSwitch0;
   table = document.getElementById("table");
   switching = true;
   /*Make a loop that will continue until
@@ -13,6 +13,7 @@ function sortTable(z) {
     for (i = 1; i < (rows.length - 1); i++) {
       //start by saying there should be no switching:
       shouldSwitch = false;
+      shouldSwitch0 = false
       /*Get the two elements you want to compare,
       one from current row and one from the next:*/
       x = rows[i].getElementsByTagName("TD")[z];
@@ -32,11 +33,15 @@ function sortTable(z) {
         break;
       }
     }
-    if (shouldSwitch) {
+    if (shouldSwitch0) {
       /*If a switch has been marked, make the switch
       and mark that a switch has been done:*/
       rows[i].parentNode.insertBefore(rows[i], rows[i-1]);
       switching = true;
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i+1], rows[i])
+      switching = true
     }
   }
 }
