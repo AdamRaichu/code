@@ -34,7 +34,7 @@ function sortTable(z) {
     if (shouldSwitch) {
       /*If a switch has been marked, make the switch
       and mark that a switch has been done:*/
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      rows[i].parentNode.insertBefore(rows[i], rows[i-1]);
       switching = true;
     }
   }
