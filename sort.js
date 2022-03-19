@@ -25,6 +25,7 @@ function sortTable(z) {
         } else if (x.dataset.lname.toLowerCase() === y.dataset.lname.toLowerCase()) {
           if (x.dataset.fname.toLowerCase() > y.dataset.fname.toLowerCase()) {
             shouldSwitch = true
+            break
           }
         }
       } else if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
