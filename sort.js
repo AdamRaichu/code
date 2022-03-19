@@ -21,7 +21,7 @@ function sortTable(z) {
       //check if the two rows should switch place:
       if (z === 0) {
         if (x.dataset.lname.toLowerCase() > y.dataset.lname.toLowerCase()) {
-          shouldSwitch = true
+          shouldSwitch0 = true
         } else if (x.dataset.lname.toLowerCase() === y.dataset.lname.toLowerCase()) {
           if (x.dataset.fname.toLowerCase() > y.dataset.fname.toLowerCase()) {
             shouldSwitch = true
