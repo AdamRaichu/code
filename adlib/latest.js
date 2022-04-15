@@ -32,7 +32,7 @@ AdamRaichuJsLib.prototype.onLoad = function() {
   //Check if a newer version is available.
   this.versionEdited = this.version.split(".")
   try {
-    for (s = 0; s < versionEdited.length; s++) {
+    for (s = 0; s < this.versionEdited.length; s++) {
       if (this.versionEdited[s] < AdLibCurrentVersion.split(".")[s]) {
         console.warn("%cA newer version of AdLib.js by AdamRaichu is available on GitHub @ AdamRaichu/code/adlib. Run AR.edit() to see current version.", "color: #0624b8");
         break
