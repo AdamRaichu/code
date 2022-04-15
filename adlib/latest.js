@@ -5,7 +5,7 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.10.0"
+  this.version = "1.10.1"
   this.lastUpdated = "4/15/22"
   this.availableFunctions = [
     "about()",
@@ -46,6 +46,10 @@ AdamRaichuJsLib.prototype.onLoad = function() {
 }
 
 CanvasRenderingContext2D.prototype.drawGrid = function(increment) {
+  if (increment <= 0) {
+    console.error("Increment must be greater than 0.")
+    return
+  }
   for (z = increment; z < this.canvas.width || z < this.canvas.height; z += increment) {
     this.beginPath();
     this.moveTo(z, 0);
