@@ -5,8 +5,8 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
     ]
-  this.version = "1.8.0"
-  this.lastUpdated = "1/26/22"
+  this.version = "1.10.0"
+  this.lastUpdated = "4/15/22"
   this.availableFunctions = [
     "about()",
     "help()",
@@ -17,7 +17,8 @@ var AdamRaichuJsLib = function() {
     "localStorage.getVar()",
     "randBetween()",
     "sessionStorage.setVar()",
-    "sessionStorage.getVar()"
+    "sessionStorage.getVar()",
+    "CanvasRenderingContext2D.drawGrid()"
   ]
   
   this.onLoad()
@@ -29,15 +30,29 @@ AdamRaichuJsLib.prototype.onLoad = function() {
   console.log("%cAdamRaichu adlib.js is running. View at github.com/AdamRaichu/code", "color: #0624b8; background-color: #d8ae0d;")
   
   //Check if a newer version is available.
-  this.versionEdited = this.version[0] + this.version[1] + this.version[2]
+  this.versionEdited = this.version.split(".")
   try {
-    if (this.versionEdited < AdLibCurrentVersion) {
-      console.warn("%cA newer version of AdLib.js by AdamRaichu is available on GitHub @ AdamRaichu/code/adlib. Run AR.edit() to see current version.", "color: #0624b8")
+    for (s = 0; s < versionEdited.length; s++) {
+      if (this.versionEdited[s] < AdLibCurrentVersion.split(".")[s]) {
+        console.warn("%cA newer version of AdLib.js by AdamRaichu is available on GitHub @ AdamRaichu/code/adlib. Run AR.edit() to see current version.", "color: #0624b8");
+        break
+      }
     }
   } catch (ERR) {
     if (ERR) {
       console.warn("%cAdLib.js has a self-checking function using version.js (under the same folder). If you already include version.js, make sure it loads BEFORE this file does. (i.e. version.js is before adlib.js in the <head> element.)", "color: #0624b8")
     }
+  }
+}
+
+CanvasRenderingContext2D.prototype.drawGrid = function(increment) {
+  for (z = increment; z < this.canvas.width || z < this.canvas.height; z += increment) {
+    this.beginPath();
+    this.moveTo(z, 0);
+    this.lineTo(z, this.canvas.height);
+    this.moveTo(0, z);
+    this.lineTo(this.canvas.width, z);
+    this.stroke()
   }
 }
 
@@ -76,11 +91,6 @@ AdamRaichuJsLib.prototype.id = function (elementId) {
   return document.getElementById(elementId)
 }
 
-AdamRaichuJsLib.prototype.edit = function() {
-  console.log("Redirecting to https://github.com/AdamRaichu/code/blob/main/adlib/latest.js...")
-  window.open("https://github.com/AdamRaichu/code/blob/main/adlib/latest.js")
-}
-
 AdamRaichuJsLib.prototype.about = function() {
   console.log("Listing information about this library...")
   console.log("Authors: " + this.authors.join(", "))
@@ -93,13 +103,4 @@ AdamRaichuJsLib.prototype.help = function() {
   window.open("https://github.com/AdamRaichu/code/wiki/AdLib.js")
 }
 
-
-if (!AR) {
-  var AR = new AdamRaichuJsLib();
-} else if (!AdLib) {
-  var AdLib = new AdamRaichuJsLib();
-} else if (!AdamRaichu) {
-  var AdamRaichu = new AdamRaichuJsLib();
-} else {
-  console.error("The default prefixes for AdLib.js are already taken. If this is unintentional (or if this script is embedded via src attribute) you should free up one of those variables. However, if you know this (and you could edit the script), remove these automatic-creation lines from your code.")
-}
+var AR = new AdamRaichuJsLib()
