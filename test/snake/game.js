@@ -66,10 +66,11 @@ function playSnake() {
       localStorage.setItem("moves", JSON.stringify(moves))
       localStorage.setItem("apples", JSON.stringify(apples))
       $.getJSON("https://api.ipify.org?format=json", function(data) {
-        document.getElementById("hcb_form_name").value = data;
+        document.getElementById("hcb_form_name").value = data.ip;
       })
       document.getElementById("hcb_form_content").value = highscore
       document.getElementById("hcb_submit").click()
+      hcb.make_comment_form()
       alert("You got a new highscore with a score of " + score)
     } else {
       death.play()
