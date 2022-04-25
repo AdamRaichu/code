@@ -4,21 +4,21 @@
 var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
-    ]
-  this.version = "1.10.1"
-  this.lastUpdated = "4/15/22"
+  ]
+  this.version = "2.0.0",
+  this.versionSplit = [2,0,0]
+  this.lastUpdated = "4/25/22"
   this.availableFunctions = [
-    "about()",
-    "help()",
-    "edit()",
-    "id()",
-    "class()",
-    "localStorage.setVar()",
-    "localStorage.getVar()",
-    "randBetween()",
-    "sessionStorage.setVar()",
-    "sessionStorage.getVar()",
-    "CanvasRenderingContext2D.drawGrid()"
+    "about",
+    "help",
+    "id",
+    "class",
+    "localStorage.setVar",
+    "localStorage.getVar",
+    "randBetween",
+    "sessionStorage.setVar",
+    "sessionStorage.getVar",
+    "CanvasRenderingContext2D.drawGrid"
   ]
   
   this.onLoad()
@@ -27,15 +27,14 @@ var AdamRaichuJsLib = function() {
 
 AdamRaichuJsLib.prototype.onLoad = function() {
   
-  console.log("%cAdamRaichu adlib.js is running. View at github.com/AdamRaichu/code", "color: #0624b8; background-color: #d8ae0d;")
+  console.info("%cAdamRaichu adlib.js is running. View at github.com/AdamRaichu/code", "color: #0624b8; background-color: #d8ae0d;")
   
   //Check if a newer version is available.
-  this.versionEdited = this.version.split(".")
   try {
-    for (s = 0; s < this.versionEdited.length; s++) {
-      if (this.versionEdited[s] < AdLibCurrentVersion.split(".")[s]) {
-        console.warn("%cA newer version of AdLib.js by AdamRaichu is available on GitHub @ AdamRaichu/code/adlib. Run AR.edit() to see current version.", "color: #0624b8");
-        break
+    for (l = 0; l < AdamRaichuJsLibInfo.versionSplit.length; l++) {
+      if (this.versionSplit[l] < AdamRaichuJsLibInfo.versionSplit[l]) {
+        console.warn("You are not using the latest version of AdLib.js. See supported versions @")
+        console.warn("https://github.com/AdamRaichu/code/blob/main/adlib/README.md#supported-versions")
       }
     }
   } catch (ERR) {
