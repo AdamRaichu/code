@@ -1,15 +1,5 @@
 # Security Policy
 
-## Supported Versions
-
-Adlib Supported Versions
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.8.x   | ✅ |
-| 1.2.x + | ✅ |
-| 1.0.0   | :x: |
-
 ## Reporting a Vulnerability
 
 If you find a vulnerability, report it via an issue.
