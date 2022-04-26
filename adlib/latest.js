@@ -5,9 +5,9 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
   ]
-  this.version = "2.0.0",
-  this.versionSplit = [2,0,0]
-  this.lastUpdated = "4/25/22"
+  this.version = "2.0.1",
+  this.versionSplit = [2,0,1]
+  this.lastUpdated = "4/26/22"
   this.availableFunctions = [
     "about",
     "help",
@@ -60,7 +60,7 @@ CanvasRenderingContext2D.prototype.drawGrid = function(increment) {
 }
 
 AdamRaichuJsLib.prototype.randBetween = function (low, high) {
-  if (low < high) {
+  if (!(low > high)) {
     low = Math.ceil(low);
     high = Math.floor(high)
     return Math.floor(Math.random() * (high - low + 1)) + low;
