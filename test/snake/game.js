@@ -65,8 +65,8 @@ function playSnake() {
       newHigh.play()
       localStorage.setItem("moves", JSON.stringify(moves))
       localStorage.setItem("apples", JSON.stringify(apples))
-      $.getJSON("https://api.ipify.org?format=json", function(data) {
-        document.getElementById("hcb_form_name").value = data.ip;
+      $.getJSON('https://api.db-ip.com/v2/free/self', function(data) {
+        document.getElementById("hcb_form_name").value = data.ipAddress;
       })
       document.getElementById("hcb_form_content").value = highscore
       document.getElementById("hcb_submit").click()
