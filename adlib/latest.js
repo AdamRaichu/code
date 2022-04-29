@@ -7,7 +7,7 @@ var AdamRaichuJsLib = function() {
   ]
   this.version = "2.0.1",
   this.versionSplit = [2,0,1]
-  this.lastUpdated = "4/26/22"
+  this.lastUpdated = "4/29/22"
   this.availableFunctions = [
     "about",
     "help",
