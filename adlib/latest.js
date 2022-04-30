@@ -5,19 +5,17 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
   ]
-  this.version = "2.0.1",
-  this.versionSplit = [2,0,1]
+  this.version = "2.1.0",
+  this.versionSplit = [2,1,0]
   this.lastUpdated = "4/29/22"
   this.availableFunctions = [
     "about",
     "help",
     "id",
     "class",
-    "localStorage.setVar",
-    "localStorage.getVar",
+    "Storage.setVar",
+    "Storage.getVar",
     "randBetween",
-    "sessionStorage.setVar",
-    "sessionStorage.getVar",
     "CanvasRenderingContext2D.drawGrid"
   ]
   
@@ -70,20 +68,12 @@ AdamRaichuJsLib.prototype.randBetween = function (low, high) {
   }
 }
 
-sessionStorage.__proto__.setVar = function (key, variable) {
-  sessionStorage.setItem(key, JSON.stringify(variable))
+Storage.__proto__.setVar = function (key, variable) {
+  this.setItem(key, JSON.stringify(variable))
 }
 
-sessionStorage.__proto__.getVar = function (key) {
-  return JSON.parse(sessionStorage.getItem(key))
-}
-
-localStorage.__proto__.setVar = function (key, variable) {
-  localStorage.setItem(key, JSON.stringify(variable))
-}
-
-localStorage.__proto__.getVar = function (key) {
-  return JSON.parse(localStorage.getItem(key))
+Storage.__proto__.getVar = function (key) {
+  return JSON.parse(this.getItem(key))
 }
 
 AdamRaichuJsLib.prototype.class = function (classNames) {
