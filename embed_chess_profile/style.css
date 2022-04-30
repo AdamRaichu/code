@@ -1,1 +1,24 @@
+#main {
+	width: 300px;
+	height: 150px;
+	background-color: #1f2227;
+	display: flex;
+	color: white;
+}
 
+#main img#avatar {
+	content: url("https://images.chesscomfiles.com/uploads/v1/user/115782272.2589cb2f.200x200o.d0645819763b.jpeg");
+	width: 100px;
+	height: 100px;
+	margin: 25px;
+}
+
+#main div#info {
+	background-color: #30353d;
+	width: 150px;
+	height: 150px;
+}
+
+#main div#info * {
+	margin-left: 15px;
+}
