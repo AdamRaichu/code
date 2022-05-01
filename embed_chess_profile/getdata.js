@@ -1,3 +1,3 @@
-function getData(object) {
-  window.userInfo = object;
+function getProfile(object) {
+  window.userProfile = object;
 }
