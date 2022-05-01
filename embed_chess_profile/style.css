@@ -23,6 +23,6 @@ body {
 	height: 150px;
 }
 
-#main div#info p {
+#main div#info p, #main div#info h4 {
 	margin-left: 15px;
 }
