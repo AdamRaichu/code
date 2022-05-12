@@ -5,9 +5,9 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
   ]
-  this.version = "2.1.0",
-  this.versionSplit = [2,1,0]
-  this.lastUpdated = "4/29/22"
+  this.version = "2.3.0",
+  this.versionSplit = [2,3,0]
+  this.lastUpdated = "5/12/22"
   this.availableFunctions = [
     "about",
     "help",
@@ -16,7 +16,10 @@ var AdamRaichuJsLib = function() {
     "Storage.setVar",
     "Storage.getVar",
     "randBetween",
-    "CanvasRenderingContext2D.drawGrid"
+    "CanvasRenderingContext2D.drawGrid",
+    "newEl",
+    "$",
+    "$$"
   ]
   
   this.onLoad()
