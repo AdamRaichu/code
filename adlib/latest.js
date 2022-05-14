@@ -5,9 +5,9 @@ var AdamRaichuJsLib = function() {
   this.authors = [
     "AdamRaichu"
   ]
-  this.version = "2.1.0",
-  this.versionSplit = [2,1,0]
-  this.lastUpdated = "4/29/22"
+  this.version = "2.3.0",
+  this.versionSplit = [2,3,0]
+  this.lastUpdated = "5/12/22"
   this.availableFunctions = [
     "about",
     "help",
@@ -16,7 +16,10 @@ var AdamRaichuJsLib = function() {
     "Storage.setVar",
     "Storage.getVar",
     "randBetween",
-    "CanvasRenderingContext2D.drawGrid"
+    "CanvasRenderingContext2D.drawGrid",
+    "newEl",
+    "$",
+    "$$"
   ]
   
   this.onLoad()
@@ -40,6 +43,18 @@ AdamRaichuJsLib.prototype.onLoad = function() {
       console.warn("%cAdLib.js has a self-checking function using version.js (under the same folder). If you already include version.js, make sure it loads BEFORE this file does. (i.e. version.js is before adlib.js in the <head> element.)", "color: #0624b8")
     }
   }
+}
+
+AdamRaichuJsLib.prototype.$$ = function(selectors) {
+  return document.querySelectorAll(selectors)
+}
+
+AdamRaichuJsLib.prototype.$ = function(selectors) {
+  return document.querySelector(selectors)
+}
+
+AdamRaichuJsLib.prototype.newEl = function(tagName) {
+  return document.createElement(tagName)
 }
 
 CanvasRenderingContext2D.prototype.drawGrid = function(increment) {
