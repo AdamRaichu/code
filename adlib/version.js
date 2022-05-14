@@ -1,7 +1,7 @@
 var AdLibCurrentVersion = "2" //deprecated
 var AdamRaichuJsLibInfo = {
-    currentVersion : "2.1.0",
-    versionSplit: [2,1,0],
+    currentVersion : "2.3.0",
+    versionSplit: [2,3,0],
     urls: {
         code: "https://github.com/AdamRaichu/code/tree/main/adlib",
         newIssue: "https://github.com/AdamRaichu/code/issues/new",
