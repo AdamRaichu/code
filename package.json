@@ -1,0 +1,11 @@
+{
+    "name": "adlib-js",
+    "version": "2.3.0",
+    "description": "A constructor for making bulky functions compact.",
+    "repository": "github:AdamRaichu/code",
+    "homepage": "https://github.com/AdamRaichu/code/adlib",
+    "bugs": "https://github.com/AdamRaichu/code/issues",
+    "scripts": {
+        "postinstall": "node build-version.js"
+    }
+}

@@ -1,0 +1,22 @@
+name: Build version.js based on package file.
+on:
+  workflow_dispatch: 
+  push:
+    branches:
+      - main
+jobs:
+  npm:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - run: |
+        npm i
+        date > lastUpdated.txt
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "pushed from exp.yml"
+        git push
