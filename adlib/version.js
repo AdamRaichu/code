@@ -7,4 +7,4 @@ var AdamRaichuJsLibInfo = {
     newIssue: "https://github.com/AdamRaichu/code/issues/new",
     readMe: "https://github.com/AdamRaichu/code/blob/main/adlib/README.md#supported-versions"
   }
-}
+};
