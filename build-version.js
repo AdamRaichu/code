@@ -7,7 +7,7 @@ fs.writeFile('adlib/version.js', content, err => {
     if (err) {
         console.error(err);
     }
-    console.log("text.txt file contents:")
+    console.log("version.js file contents:")
     console.log("==========")
     console.log(content)
     console.log("==========")
