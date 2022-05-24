@@ -98,7 +98,7 @@ sessionStorage.__proto__.setVar = function (key, variable) {
 }
 
 sessionStorage.__proto__.getVar = function (key) {
-  return JSON.parse(localStorage.getItem(key))
+  return JSON.parse(sessionStorage.getItem(key))
 }
 
 AdamRaichuJsLib.prototype.class = function (classNames) {
