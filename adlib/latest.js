@@ -85,20 +85,12 @@ AdamRaichuJsLib.prototype.randBetween = function (low, high) {
   }
 }
 
-localStorage.__proto__.setVar = function (key, variable) {
-  localStorage.setItem(key, JSON.stringify(variable))
+Storage.prototype.setVar = function (key, variable) {
+  this.setItem(key, JSON.stringify(variable))
 }
 
-localStorage.__proto__.getVar = function (key) {
-  return JSON.parse(localStorage.getItem(key))
-}
-
-sessionStorage.__proto__.setVar = function (key, variable) {
-  sessionStorage.setItem(key, JSON.stringify(variable))
-}
-
-sessionStorage.__proto__.getVar = function (key) {
-  return JSON.parse(sessionStorage.getItem(key))
+Storage.prototype.getVar = function (key) {
+  return JSON.parse(this.getItem(key))
 }
 
 AdamRaichuJsLib.prototype.class = function (classNames) {
