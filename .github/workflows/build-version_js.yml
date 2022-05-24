@@ -9,11 +9,14 @@ jobs:
     name: Use Node to update version.js.
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - name: import GitHub actions checkout
+      uses: actions/checkout@v3
+    - name: import Node
+      uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: |
+    - name: run npm and git
+      run: |
         npm i
         date > lastUpdated.txt
         git config user.name github-actions
