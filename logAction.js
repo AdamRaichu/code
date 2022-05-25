@@ -22,7 +22,7 @@ module.exports = {
         content += "INFO] <"
       } else {
         content += "INFO] <"
-        console.warn("`logLevel` was eithere invalid or not provided.")
+        console.warn("`logLevel` was either invalid or not provided.")
       }
       if (typeof source !== 'undefined') {
         content += source
