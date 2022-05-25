@@ -24,4 +24,4 @@ jobs:
       with:
         script: |
           var tools = require("logAction.js")
-          tools.logAction("${{ github.event.inputs.message }}", ${{ github.events.inputs.logLevel }}, "CONSOLE")
+          tools.logAction("${{ github.event.inputs.message }}", ${{ github.event.inputs.logLevel }}, "CONSOLE")
