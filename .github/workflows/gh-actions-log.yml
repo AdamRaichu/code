@@ -1,4 +1,4 @@
-name: Auto-triggered workflow
+name: Log to github-actions.log
 on:
   workflow_dispatch: 
     inputs:
