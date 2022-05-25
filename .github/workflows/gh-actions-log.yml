@@ -23,5 +23,5 @@ jobs:
       uses: actions/github-script@v1
       with:
         script: |
-          var tools = require("../logAction.js")
+          const tools = require("./logAction.js")
           tools.logAction("${{ github.event.inputs.message }}", ${{ github.event.inputs.logLevel }}, "CONSOLE")
