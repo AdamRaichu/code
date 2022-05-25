@@ -1,5 +1,6 @@
 module.exports = {
-  logAction: function (message, logLevel) {
+  logAction: function (message, logLevel, source) {
+    var fs = require("fs")
     fs.readFile("github-actions.log", (err, buff) => {
       // if any error
       if (err) {
@@ -21,7 +22,7 @@ module.exports = {
         content += "INFO] "
       } else {
         content += "INFO] "
-        this.logAction("`logLevel` was eithere invalid or not provided. Source: build-version.js", 2)
+        console.warn("`logLevel` was eithere invalid or not provided.")
       }
       content += message
 
