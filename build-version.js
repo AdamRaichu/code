@@ -15,4 +15,4 @@ fs.writeFile('adlib/version.js', content, err => {
     // file written successfully
 });
 
-tools.logAction("Built version.js with the following version: " + version, 1)
+tools.logAction("Built version.js with the following version: " + version, 1, "build-version.js")

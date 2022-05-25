@@ -15,14 +15,20 @@ module.exports = {
       content += new Date()
       content += " ["
       if (logLevel === 3) {
-        content += "ERROR] "
+        content += "ERROR] <"
       } else if (logLevel === 2) {
-        content += "WARN] "
+        content += "WARN] <"
       } else if (logLevel === 1) {
-        content += "INFO] "
+        content += "INFO] <"
       } else {
-        content += "INFO] "
+        content += "INFO] <"
         console.warn("`logLevel` was eithere invalid or not provided.")
+      }
+      if (typeof source !== 'undefined') {
+        content += source
+        content += "> "
+      } else {
+        content += "unknown> "
       }
       content += message
 
