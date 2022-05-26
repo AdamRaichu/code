@@ -19,7 +19,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - name: log based on inputs using actions/github-script
+    - name: log based on inputs
       uses: actions/github-script@v1
       with:
         script: |
@@ -27,17 +27,17 @@ jobs:
             var fs = require("fs")
             fs.readFile("github-actions.log", (err, buff) => {
               // if any error
-             if (err) {
+              if (err) {
                 console.error("[!!! ----- logAction failed ----- !!!]")
-               console.error(err);
-               return;
+                console.error(err);
+                return;
               }
 
-             // otherwise log contents
-             var content = buff.toString();
-             content += "\n"
-             content += new Date()
-             content += " ["
+            // otherwise log contents
+            var content = buff.toString();
+            content += "\n"
+            content += new Date()
+            content += " ["
               if (logLevel === 3) {
                 content += "ERROR] <"
               } else if (logLevel === 2) {
@@ -67,3 +67,10 @@ jobs:
             });
           }
           logAction("${{ github.event.inputs.message }}", ${{ github.event.inputs.logLevel }}, "CONSOLE")
+    - name: push changes
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "logged message init by gh-actions-log"
+        git push
