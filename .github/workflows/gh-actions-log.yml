@@ -19,10 +19,9 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: npm install ../logActions.js
     - name: log based on inputs using actions/github-script
       uses: actions/github-script@v1
       with:
         script: |
-          const tools = require("./logAction.js")
+          const tools = require("./logAction")
           tools.logAction("${{ github.event.inputs.message }}", ${{ github.event.inputs.logLevel }}, "CONSOLE")
