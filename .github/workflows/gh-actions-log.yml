@@ -19,7 +19,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: npm ls
+    - run: npm install ../logActions.js
     - name: log based on inputs using actions/github-script
       uses: actions/github-script@v1
       with:
