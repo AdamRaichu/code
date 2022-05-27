@@ -15,12 +15,18 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
-    - name: run npm and git
+    - name: update lastUpdated.txt
+      run: |
+        date > lastUpdated.txt
+        git commit -m "updated lastUpdated.txt"
+    - name: run npm
+      if: "contains(github.event.head_commit.message, 'RUN:VERSION_BUILD')"
       run: |
         npm i
-        date > lastUpdated.txt
+        git commit -m "built version.js from build-version_js.yml"
+    - name: commit changes
+      run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add .
-        git commit -m "built version.js from build-version_js.yml"
         git push
