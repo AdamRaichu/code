@@ -18,7 +18,7 @@ jobs:
     - name: update lastUpdated.txt
       run: |
         date > lastUpdated.txt
-    - name: run npm
+    - name: build version.js
       if: "contains(github.event.head_commit.message, 'RUN:VERSION_BUILD')"
       run: |
         npm i
