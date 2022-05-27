@@ -18,15 +18,14 @@ jobs:
     - name: update lastUpdated.txt
       run: |
         date > lastUpdated.txt
-        git commit -m "updated lastUpdated.txt"
     - name: run npm
       if: "contains(github.event.head_commit.message, 'RUN:VERSION_BUILD')"
       run: |
         npm i
-        git commit -m "built version.js from build-version_js.yml"
     - name: commit changes
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add .
+        git commit -m "updated lastUpdated.txt"
         git push
