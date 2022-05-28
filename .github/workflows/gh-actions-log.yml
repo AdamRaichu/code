@@ -23,6 +23,7 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
+          /* 
           function logAction (message, logLevel, source) {
             var fs = require("fs")
             fs.readFile("github-actions.log", (err, buff) => {
@@ -66,17 +67,10 @@ jobs:
               });
             });
           }
-          logAction("${{ github.event.inputs.message }}", ${{ github.event.inputs.logLevel }}, "CONSOLE")
+          */
+          var tools = require("./logAction.js")
+          tools.logAction("${{ github.event.inputs.message }}", ${{ github.event.inputs.logLevel }}, "CONSOLE")
           core.notice("${{ github.event.inputs.message }}")
-          try {
-            var tools = require("./logAction.js")
-          } catch (ERR) {
-            if (ERR) {
-              console.error(ERR)
-            } else {
-              console.log(tools)
-            }
-          }
     - name: push changes
       run: |
         git config user.name github-actions
