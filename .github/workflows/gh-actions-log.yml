@@ -68,6 +68,15 @@ jobs:
           }
           logAction("${{ github.event.inputs.message }}", ${{ github.event.inputs.logLevel }}, "CONSOLE")
           core.notice("${{ github.event.inputs.message }}")
+          try {
+            var tools = require("./logAction.js")
+          } catch (ERR) {
+            if (ERR) {
+              console.error(ERR)
+            } else {
+              console.log(tools)
+            }
+          }
     - name: push changes
       run: |
         git config user.name github-actions
