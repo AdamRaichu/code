@@ -1,12 +1,12 @@
 name: Log to github-actions.log
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
     inputs:
-      message: 
+      message:
         description: 'message logged to github-actions.log'
         required: true
         type: string
-      logLevel: 
+      logLevel:
         description: 'logLevel. 1 = INFO, 2 = WARN, 3 = ERROR'
         default: 1
         required: true
