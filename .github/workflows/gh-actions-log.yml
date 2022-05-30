@@ -8,9 +8,9 @@ on:
         type: string
       logLevel:
         description: 'logLevel. 1 = INFO, 2 = WARN, 3 = ERROR'
-        default: 1
+        default: "1"
         required: true
-        type: number
+        type: string
 jobs:
   log:
     runs-on: ubuntu-latest
